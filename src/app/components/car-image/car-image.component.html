@@ -1,7 +1,23 @@
-<ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-</ul>
+<!-- <div class="carousel-item " *ngFor="let image of carImages ">
+        <img src="https://localhost:44379/{{image.imagePath}}">
+         
+   </div> -->
+
+<div *ngFor="let carImage of carImages" class="card" style="width: 40rem">
+  <img src="{{ path + carImage.imagePath }}" class="card-img-top" alt="..." />
+</div>
+<div class="card-body">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <b style="font-size: xx-large"> Details</b>
+    </li>
+    <tr *ngFor="let car of cars">
+      <li class="list-group-item">Car Name : {{ car.carName }}</li>
+      <li class="list-group-item">Brand Name : {{ car.brandName }}</li>
+      <li class="list-group-item">Color Name : {{ car.colorName }}</li>
+      <li class="list-group-item">Model Year : {{ car.modelYear }}</li>
+      <li class="list-group-item">Daily Price : {{ car.dailyPrice }}</li>
+      <li class="list-group-item">Description : {{ car.description }}</li>
+    </tr>
+  </ul>
+</div>

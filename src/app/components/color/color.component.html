@@ -1,12 +1,18 @@
-<table class="table table-danger table-striped table-hover table-bordered border-danger">
+<table
+  class="table table-danger table-striped table-hover table-bordered border-danger"
+>
   <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-    </tr>
+    <h4>Colors</h4>
   </thead>
-  <tr *ngFor="let color of colors">
-    <td>{{ color.colorId }}</td>
-    <td>{{ color.colorName}}</td>
-  </tr>
 </table>
+
+<ul class="list-group">
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="/cars/{{ color.colorId }}"
+    *ngFor="let color of colors"
+    [class]="getCurrentColorClass(color)"
+  >
+    <td>{{ color.colorName }}</td>
+  </li>
+</ul>

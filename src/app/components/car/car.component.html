@@ -1,19 +1,26 @@
-<div *ngIf="dataLoaded == false" class="spinner-border text-dark" role="status">
+<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-dark" role="status">
   <span class="visually-hidden">Loading...</span>
-</div>
+</div>  -->
 
-<table class="table table-danger table-striped table-hover table-bordered border-danger">
+<table
+  class="table table-danger table-striped table-hover table-bordered border-danger"
+>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Brand</th>
-      <th>Color</th>
+      <th>BrandName</th>
+      <th>ColorName</th>
       <th>Model Year</th>
       <th>Daily Price</th>
       <th>Description</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
+  <tr
+    (click)="setCurrentCars(car)"
+    routerLink="/cars/car/{{ car.carId }}"
+    *ngFor="let car of cars"
+    
+  >
     <td>{{ car.carName }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.colorName }}</td>
